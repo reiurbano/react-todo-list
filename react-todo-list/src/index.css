@@ -1,1 +1,5 @@
 @import 'bootstrap/dist/css/bootstrap.css';
+
+.strike {
+    text-decoration: line-through;
+}
