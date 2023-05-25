@@ -19,11 +19,21 @@ function App() {
     })
   }
 
+  const finTask = (prop) => {
+    let tempArr = tasks.map(item => {
+      if(item.id == prop) {
+        return ({...item, completionStatus: !item.completionStatus})
+      }
+      return item;
+    })
+    setTasks(tempArr);
+  }
+
   return (
     <main className="container p-5 mt-5 border shadow">
       <h1 className="fw-bold">Todo List</h1>
       <TodoForm addTask={addTask} />
-      <TodoList list={tasks} del={delTask}/>
+      <TodoList list={tasks} del={delTask} fin={finTask}/>
     </main>
   )
 }

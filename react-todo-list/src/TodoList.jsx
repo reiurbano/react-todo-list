@@ -1,6 +1,6 @@
 import TodoItem from './TodoItem';
 
-function TodoList({ list, del }) {
+function TodoList({ list, del, fin }) {
 
   const taskList = list.map(item => (
     <TodoItem
@@ -8,6 +8,7 @@ function TodoList({ list, del }) {
       status={item.completionStatus}
       id={item.id}
       del={del}
+      fin={fin}
     />
   ));
 
