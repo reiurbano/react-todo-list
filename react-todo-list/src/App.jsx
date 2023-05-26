@@ -32,7 +32,7 @@ function App() {
   return (
     <main className="container p-5 mt-5 border shadow">
       <h1 className="fw-bold">Todo List</h1>
-      <TodoForm addTask={addTask} />
+      <TodoForm list={tasks} addTask={addTask} />
       <TodoList list={tasks} del={delTask} fin={finTask}/>
     </main>
   )

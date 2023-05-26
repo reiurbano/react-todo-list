@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function TodoForm({ addTask }) {
+function TodoForm({ addTask, list }) {
 
   const [id, setId] = useState(0);
 
@@ -19,9 +19,18 @@ function TodoForm({ addTask }) {
   }
 
   const newTask = () => {
-    addTask(task);
-    setId(id + 1);
-    document.querySelector("input").value = '';
+    let x = document.querySelector("input").value;
+    let y = list.filter(item => item.taskItem == x);
+    if (x == '') {
+      alert("Input field must be filled.");
+    } else if (y.length > 0) {
+      alert("Item already exists");
+      document.querySelector("input").value = '';
+    } else {
+      addTask(task);
+      setId(id + 1);
+      document.querySelector("input").value = '';
+    }
   }
 
   return (
