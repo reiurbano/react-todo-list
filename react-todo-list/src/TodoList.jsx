@@ -4,8 +4,8 @@ function TodoList({ list, del, fin }) {
 
   const taskList = list.map(item => (
     <TodoItem
-      task={item.taskItem}
-      status={item.completionStatus}
+      task={item.description}
+      status={item.status}
       id={item.id}
       del={del}
       fin={fin}
@@ -14,7 +14,7 @@ function TodoList({ list, del, fin }) {
 
   return (
     <div>
-      { taskList }
+      {taskList}
     </div>
   )
 }

@@ -2,20 +2,10 @@ import { useState } from 'react';
 
 function TodoForm({ addTask, list }) {
 
-  const [id, setId] = useState(0);
-
-  const [task, setTask] = useState({
-    taskItem: '',
-    completionStatus: false,
-    id: id
-  });
+  const [task, setTask] = useState('');
 
   const handleInputChange = (text) => {
-    setTask({
-      taskItem: text.target.value,
-      completionStatus: false,
-      id: id
-    });
+    setTask(text.target.value);
   }
 
   const newTask = () => {
@@ -28,7 +18,6 @@ function TodoForm({ addTask, list }) {
       document.querySelector("input").value = '';
     } else {
       addTask(task);
-      setId(id + 1);
       document.querySelector("input").value = '';
     }
   }
